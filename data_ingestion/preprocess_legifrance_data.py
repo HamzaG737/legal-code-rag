@@ -1,11 +1,12 @@
 import re
 import os
-from typing import List, Tuple
+from typing import List
 
 from pylegifrance import recherche_CODE, LegiHandler
 from loguru import logger
-from .constants import possible_headers, path_dir_data
+
 from utils import save_json
+from .constants import possible_headers, path_dir_data
 
 
 client = LegiHandler()

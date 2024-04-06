@@ -99,6 +99,7 @@ def create_query_engine(
     num_generated_questions: int = 4,
     nodes_window_size: int = 3,
     recreate_collection: bool = False,
+    reload_data: bool = False,
 ) -> BaseQueryEngine:
     """
     Create a Llama index query engine with the given configuration.
@@ -135,6 +136,9 @@ def create_query_engine(
     recreate_collection : bool, optional
         Whether to recreate the database collection, by default False
 
+    reload_data : bool, optional
+        Whether to reload the data from the legifrance API, by default False
+
     """
     index, postprocessors_list = index_nodes(
         code_name=code_name,
@@ -143,6 +147,7 @@ def create_query_engine(
         nodes_window_size=nodes_window_size,
         hybrid_search=hybrid_search,
         recreate_collection=recreate_collection,
+        reload_data=reload_data,
     )
     kwargs_query_engine = {
         "index": index,

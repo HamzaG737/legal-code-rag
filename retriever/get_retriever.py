@@ -90,6 +90,7 @@ def index_nodes(
     nodes_window_size: int,
     hybrid_search: bool,
     recreate_collection: bool = False,
+    reload_data: bool = False,
 ) -> tuple[VectorStoreIndex, list]:
 
     embed_model = get_embeddings(embedding_model)
@@ -98,6 +99,7 @@ def index_nodes(
         code_name=code_name,
         use_window_nodes=use_window_nodes,
         nodes_window_size=nodes_window_size,
+        reload_data=reload_data,
     )
     if hybrid_search:
         code_nodes.nodes_config += "_hybrid"

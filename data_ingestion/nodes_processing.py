@@ -19,6 +19,7 @@ class CodeNodes:
     use_window_nodes: bool
     nodes_window_size: int = 3
     max_words_per_node: int = 2000
+    reload_data: bool = False
     _n_truncated_articles: int = 0
 
     def __post_init__(self):
@@ -49,13 +50,17 @@ class CodeNodes:
 
     def try_load_data(self) -> List[dict]:
         path = os.path.join(path_dir_data, f"{self.code_name}.json")
-        try:
-            code_articles = load_json(path=path)
-        except FileNotFoundError:
-            logger.warning(
-                f"File not found at path {path}. Fetching data from Legifrance."
-            )
+        if self.reload_data:
             code_articles = get_code_articles(code_name=self.code_name)
+        else:
+            try:
+                code_articles = load_json(path=path)
+            except FileNotFoundError:
+                logger.warning(
+                    f"File not found at path {path}. Fetching data from Legifrance."
+                )
+                code_articles = get_code_articles(code_name=self.code_name)
+
         truncated_articles = self._chunk_long_articles(code_articles)
         return truncated_articles
 

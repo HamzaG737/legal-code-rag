@@ -36,7 +36,6 @@ def index_given_nodes(
     """
 
     collection_name = code_nodes.nodes_config
-    logger.info(f"Collection name: {collection_name}")
     client = QdrantClient("localhost", port=6333)
     if recreate_collection:
         client.delete_collection(collection_name)
@@ -44,9 +43,9 @@ def index_given_nodes(
     try:
         count = client.count(collection_name).count
         logger.info(f"Found {count} nodes in the collection.")
-    except UnexpectedResponse as e:
-        logger.warning(
-            f"Error while counting nodes in the collection : {e}" f"Setting count to 0."
+    except UnexpectedResponse:
+        logger.info(
+            f"Collection {collection_name} not found. Setting nodes count to 0."
         )
         count = 0
 

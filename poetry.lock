@@ -97,17 +97,6 @@ yarl = ">=1.0,<2.0"
 speedups = ["Brotli", "aiodns", "brotlicffi"]
 
 [[package]]
-name = "aiolimiter"
-version = "1.1.0"
-description = "asyncio rate limiter, a leaky bucket implementation"
-optional = false
-python-versions = ">=3.7,<4.0"
-files = [
-    {file = "aiolimiter-1.1.0-py3-none-any.whl", hash = "sha256:0b4997961fc58b8df40279e739f9cf0d3e255e63e9a44f64df567a8c17241e24"},
-    {file = "aiolimiter-1.1.0.tar.gz", hash = "sha256:461cf02f82a29347340d031626c92853645c099cb5ff85577b831a7bd21132b5"},
-]
-
-[[package]]
 name = "aiosignal"
 version = "1.3.1"
 description = "aiosignal: a list of registered asynchronous callbacks"
@@ -1013,25 +1002,6 @@ files = [
 ]
 
 [[package]]
-name = "importlib-metadata"
-version = "7.1.0"
-description = "Read metadata from Python packages"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "importlib_metadata-7.1.0-py3-none-any.whl", hash = "sha256:30962b96c0c223483ed6cc7280e7f0199feb01a0e40cfae4d4450fc6fab1f570"},
-    {file = "importlib_metadata-7.1.0.tar.gz", hash = "sha256:b78938b926ee8d5f020fc4772d487045805a55ddbad2ecf21c6d60938dc7fcd2"},
-]
-
-[package.dependencies]
-zipp = ">=0.5"
-
-[package.extras]
-docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
-perf = ["ipython"]
-testing = ["flufl.flake8", "importlib-resources (>=1.3)", "jaraco.test (>=5.4)", "packaging", "pyfakefs", "pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy", "pytest-perf (>=0.9.2)", "pytest-ruff (>=0.2.1)"]
-
-[[package]]
 name = "ipython"
 version = "8.18.1"
 description = "IPython: Productive Interactive Computing"
@@ -1137,17 +1107,6 @@ files = [
 ]
 
 [[package]]
-name = "json5"
-version = "0.9.24"
-description = "A Python implementation of the JSON5 data format."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "json5-0.9.24-py3-none-any.whl", hash = "sha256:4ca101fd5c7cb47960c055ef8f4d0e31e15a7c6c48c3b6f1473fc83b6c462a13"},
-    {file = "json5-0.9.24.tar.gz", hash = "sha256:0c638399421da959a20952782800e5c1a78c14e08e1dc9738fa10d8ec14d58c8"},
-]
-
-[[package]]
 name = "jupyterlab-widgets"
 version = "3.0.10"
 description = "Jupyter interactive widgets for JupyterLab"
@@ -1157,51 +1116,6 @@ files = [
     {file = "jupyterlab_widgets-3.0.10-py3-none-any.whl", hash = "sha256:dd61f3ae7a5a7f80299e14585ce6cf3d6925a96c9103c978eda293197730cb64"},
     {file = "jupyterlab_widgets-3.0.10.tar.gz", hash = "sha256:04f2ac04976727e4f9d0fa91cdc2f1ab860f965e504c29dbd6a65c882c9d04c0"},
 ]
-
-[[package]]
-name = "lazy-loader"
-version = "0.4"
-description = "Makes it easy to load subpackages and functions on demand."
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "lazy_loader-0.4-py3-none-any.whl", hash = "sha256:342aa8e14d543a154047afb4ba8ef17f5563baad3fc610d7b15b213b0f119efc"},
-    {file = "lazy_loader-0.4.tar.gz", hash = "sha256:47c75182589b91a4e1a85a136c074285a5ad4d9f39c63e0d7fb76391c4574cd1"},
-]
-
-[package.dependencies]
-packaging = "*"
-
-[package.extras]
-dev = ["changelist (==0.5)"]
-lint = ["pre-commit (==3.7.0)"]
-test = ["pytest (>=7.4)", "pytest-cov (>=4.1)"]
-
-[[package]]
-name = "litellm"
-version = "1.34.33"
-description = "Library to easily interface with LLM API providers"
-optional = false
-python-versions = "!=2.7.*,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,!=3.7.*,>=3.8"
-files = [
-    {file = "litellm-1.34.33-py3-none-any.whl", hash = "sha256:88164642dcc30239c9294f1375c7b15c4f664f927b9e5b6d7c81936e67daeec7"},
-    {file = "litellm-1.34.33.tar.gz", hash = "sha256:43b4b06086aa934131e056f46cc553e160abc63dd40a844b9bae65a603914557"},
-]
-
-[package.dependencies]
-aiohttp = "*"
-click = "*"
-importlib-metadata = ">=6.8.0"
-jinja2 = ">=3.1.2,<4.0.0"
-openai = ">=1.0.0"
-python-dotenv = ">=0.2.0"
-requests = ">=2.31.0,<3.0.0"
-tiktoken = ">=0.4.0"
-tokenizers = "*"
-
-[package.extras]
-extra-proxy = ["azure-identity (>=1.15.0,<2.0.0)", "azure-keyvault-secrets (>=4.8.0,<5.0.0)", "google-cloud-kms (>=2.21.3,<3.0.0)", "prisma (==0.11.0)", "resend (>=0.8.0,<0.9.0)"]
-proxy = ["PyJWT (>=2.8.0,<3.0.0)", "apscheduler (>=3.10.4,<4.0.0)", "backoff", "cryptography (>=42.0.5,<43.0.0)", "fastapi (>=0.109.1,<0.110.0)", "fastapi-sso (>=0.10.0,<0.11.0)", "gunicorn (>=21.2.0,<22.0.0)", "orjson (>=3.9.7,<4.0.0)", "python-multipart (>=0.0.9,<0.0.10)", "pyyaml (>=6.0.1,<7.0.0)", "rq", "uvicorn (>=0.22.0,<0.23.0)"]
 
 [[package]]
 name = "llama-index"
@@ -2432,60 +2346,6 @@ typing = ["typing-extensions"]
 xmp = ["defusedxml"]
 
 [[package]]
-name = "plotly"
-version = "5.20.0"
-description = "An open-source, interactive data visualization library for Python"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "plotly-5.20.0-py3-none-any.whl", hash = "sha256:837a9c8aa90f2c0a2f0d747b82544d014dc2a2bdde967b5bb1da25b53932d1a9"},
-    {file = "plotly-5.20.0.tar.gz", hash = "sha256:bf901c805d22032cfa534b2ff7c5aa6b0659e037f19ec1e0cca7f585918b5c89"},
-]
-
-[package.dependencies]
-packaging = "*"
-tenacity = ">=6.2.0"
-
-[[package]]
-name = "polars"
-version = "0.20.18"
-description = "Blazingly fast DataFrame library"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "polars-0.20.18-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:e305f5e6c0b8dc37fe0ff3bb1143a8bf0341134e0b23dec7c50a148f426acceb"},
-    {file = "polars-0.20.18-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:26716f074301f583da9af93108d57da631622d6496cbcbb8c08476180953f408"},
-    {file = "polars-0.20.18-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5b3843f69228df68cb82e39647c212fde58671c064c25a0c4d544f9446160a7e"},
-    {file = "polars-0.20.18-cp38-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:4b775e9677d0050775243400def1f5de4dd02b5ee220873406abc4028228525e"},
-    {file = "polars-0.20.18-cp38-abi3-win_amd64.whl", hash = "sha256:73b81b9582c48f0ca4ae08c0adc56917b0c55682044bedf0eccd3f94e4e39169"},
-    {file = "polars-0.20.18.tar.gz", hash = "sha256:8a321cbdbb459e3c0cc1af2ce6ac930d0d3b5ccbeb2dd3e4237ad07d487fd290"},
-]
-
-[package.extras]
-adbc = ["adbc-driver-manager", "adbc-driver-sqlite"]
-all = ["polars[adbc,async,cloudpickle,connectorx,deltalake,fastexcel,fsspec,gevent,numpy,pandas,plot,pyarrow,pydantic,pyiceberg,sqlalchemy,timezone,xlsx2csv,xlsxwriter]"]
-async = ["nest-asyncio"]
-cloudpickle = ["cloudpickle"]
-connectorx = ["connectorx (>=0.3.2)"]
-deltalake = ["deltalake (>=0.14.0)"]
-fastexcel = ["fastexcel (>=0.9)"]
-fsspec = ["fsspec"]
-gevent = ["gevent"]
-matplotlib = ["matplotlib"]
-numpy = ["numpy (>=1.16.0)"]
-openpyxl = ["openpyxl (>=3.0.0)"]
-pandas = ["pandas", "pyarrow (>=7.0.0)"]
-plot = ["hvplot (>=0.9.1)"]
-pyarrow = ["pyarrow (>=7.0.0)"]
-pydantic = ["pydantic"]
-pyiceberg = ["pyiceberg (>=0.5.0)"]
-pyxlsb = ["pyxlsb (>=1.0)"]
-sqlalchemy = ["pandas", "sqlalchemy"]
-timezone = ["backports-zoneinfo", "tzdata"]
-xlsx2csv = ["xlsx2csv (>=0.8.0)"]
-xlsxwriter = ["xlsxwriter"]
-
-[[package]]
 name = "portalocker"
 version = "2.8.2"
 description = "Wraps the portalocker recipe for easy usage"
@@ -2674,25 +2534,6 @@ files = [
 typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
 
 [[package]]
-name = "pydantic-settings"
-version = "2.2.1"
-description = "Settings management using Pydantic"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "pydantic_settings-2.2.1-py3-none-any.whl", hash = "sha256:0235391d26db4d2190cb9b31051c4b46882d28a51533f97440867f012d4da091"},
-    {file = "pydantic_settings-2.2.1.tar.gz", hash = "sha256:00b9f6a5e95553590434c0fa01ead0b216c3e10bc54ae02e37f359948643c5ed"},
-]
-
-[package.dependencies]
-pydantic = ">=2.3.0"
-python-dotenv = ">=0.21.0"
-
-[package.extras]
-toml = ["tomli (>=2.0.1)"]
-yaml = ["pyyaml (>=6.0.1)"]
-
-[[package]]
 name = "pygments"
 version = "2.17.2"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -2833,20 +2674,6 @@ files = [
 
 [package.dependencies]
 six = ">=1.5"
-
-[[package]]
-name = "python-dotenv"
-version = "1.0.1"
-description = "Read key-value pairs from a .env file and set them as environment variables"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "python-dotenv-1.0.1.tar.gz", hash = "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca"},
-    {file = "python_dotenv-1.0.1-py3-none-any.whl", hash = "sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a"},
-]
-
-[package.extras]
-cli = ["click (>=5.0)"]
 
 [[package]]
 name = "pytz"
@@ -3815,38 +3642,6 @@ files = [
 ]
 
 [[package]]
-name = "uptrain"
-version = "0.6.10.post1"
-description = "UpTrain - tool to evaluate LLM applications on aspects like factual accuracy, response quality, retrieval quality, tonality, etc."
-optional = false
-python-versions = "*"
-files = [
-    {file = "uptrain-0.6.10.post1-py3-none-any.whl", hash = "sha256:591f1bcdff270aaed3c9037dc66b144c9435cb8ab2730d3a646e76ecf95525f5"},
-    {file = "uptrain-0.6.10.post1.tar.gz", hash = "sha256:3f2c00ccae8bd4fc4942651ea0ec0142ae93b57d021db3eabb5100d16127cc42"},
-]
-
-[package.dependencies]
-aiolimiter = ">=1.1"
-fsspec = "*"
-httpx = ">=0.24.1"
-json5 = "*"
-lazy-loader = "*"
-litellm = "*"
-loguru = "*"
-networkx = "*"
-numpy = ">=1.23.0"
-openai = ">=1.6.1"
-pandas = "*"
-plotly = ">=5.0.0"
-polars = ">=0.18"
-pydantic = "*"
-pydantic-settings = "*"
-pyyaml = "*"
-
-[package.extras]
-test = ["pytest (>=7.0)"]
-
-[[package]]
 name = "urllib3"
 version = "2.2.1"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -4081,22 +3876,7 @@ files = [
 idna = ">=2.0"
 multidict = ">=4.0"
 
-[[package]]
-name = "zipp"
-version = "3.18.1"
-description = "Backport of pathlib-compatible object wrapper for zip files"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "zipp-3.18.1-py3-none-any.whl", hash = "sha256:206f5a15f2af3dbaee80769fb7dc6f249695e940acca08dfb2a4769fe61e538b"},
-    {file = "zipp-3.18.1.tar.gz", hash = "sha256:2884ed22e7d8961de1c9a05142eb69a247f120291bc0206a00a7642f09b5b715"},
-]
-
-[package.extras]
-docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
-testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy", "pytest-ruff (>=0.2.1)"]
-
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "793c72b59660b4b47d81fdfaf61f645f09fc5aea200ca57526c9dc2d3798319f"
+content-hash = "a21b21b750fc6e78df11f148471f3d651acc80134a3b61ac545202a7213d8a0c"

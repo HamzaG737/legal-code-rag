@@ -9,13 +9,6 @@ from utils import save_json
 from .constants import possible_headers, path_dir_data
 
 
-client = LegiHandler()
-client.set_api_keys(
-    legifrance_api_key=os.getenv("LEGIFRANCE_API_KEY"),
-    legifrance_api_secret=os.getenv("LEGIFRANCE_API_SECRET"),
-)
-
-
 def get_all_articles(dict_code: dict) -> List[dict]:
 
     queue = [dict_code]
@@ -73,6 +66,11 @@ def parse_row(row: dict) -> dict:
 def get_code_articles(
     code_name: str = "Code civil", save_rows: bool = True
 ) -> List[dict]:
+    client = LegiHandler()
+    client.set_api_keys(
+        legifrance_api_key=os.getenv("LEGIFRANCE_API_KEY"),
+        legifrance_api_secret=os.getenv("LEGIFRANCE_API_SECRET"),
+    )
     dict_code = recherche_CODE(code_name, champ="ALL")[0]
     articles = get_all_articles(dict_code=dict_code)
     preprocessed_articles = list(map(parse_row, articles))

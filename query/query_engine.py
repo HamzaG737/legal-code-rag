@@ -9,13 +9,12 @@ from query.constants import QUERY_GEN_PROMPT
 def update_prompts_for_query_engine(query_engine: BaseQueryEngine) -> BaseQueryEngine:
 
     new_tmpl_str = (
-        "Context information is below.\n"
+        "Below is the specific context required to answer the upcoming query. You must base your response solely on this context, strictly avoiding the use of external knowledge or assumptions..\n"
         "---------------------\n"
         "{context_str}\n"
         "---------------------\n"
-        "Given the context information and not prior knowledge, answer the query.\n"
-        "You must always mention the code name and article number in your answer. With something like 'selon le code x et l'article y, ...'\n"
-        "You must also detect the language of the query and translate your response to the original query language. \n"
+        "Given this context, please formulate your response to the following query. It is imperative that your answer explicitly mentions any relevant code name and article number by using the format 'according to code X and article Y,...'. Ensure your response adheres to these instructions to maintain accuracy and relevance."
+        "Furthermore, it is crucial to respond in the same language in which the query is presented. This requirement is to ensure the response is directly applicable and understandable in the context of the query provided."
         "Query: {query_str}\n"
         "Answer: "
     )

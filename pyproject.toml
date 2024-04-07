@@ -6,7 +6,7 @@ authors = ["HamzaG737 <hamza96gharbi@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.11.8"
+python = ">=3.9,<3.12"
 llama-index = "^0.10.6"
 loguru = "^0.7.2"
 llama-index-embeddings-huggingface = "^0.1.4"

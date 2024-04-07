@@ -14,14 +14,16 @@ Next, you'll need to install the necessary packages. We used poetry as our packa
 curl -sSL https://install.python-poetry.org | python3 -
 ```
 
-
-
 You can find more about poetry installation here. todo add link
 
 Then, at the root of the project, use the following command to install the Python packages:
 ```
 poetry install
 ```
+
+For this project, it is required to have a Python environment running a version in the range of 3.9 to 3.11. We strongly recommend the creation of a virtual environment to isolate your project’s package dependencies, ensuring they do not conflict with those installed globally on your system.
+
+You will also need Docker for this project.
 
 Finally, ensure the `OPENAI_API_KEY` environment variable is defined as we will utilize both OpenAI's `gpt-3.5-turbo` LLM and Ada embeddings in this project. If you're interested in conducting the experiment with Mistral embeddings, you must obtain an API key from the Mistral platform. Then you need to create the environment variable `MISTRAL_API_KEY` with that key value.
 

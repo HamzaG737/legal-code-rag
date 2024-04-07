@@ -42,17 +42,11 @@ def index_given_nodes(
 
     try:
         count = client.count(collection_name).count
-        logger.info(f"Found {count} nodes in the collection.")
     except UnexpectedResponse:
-        logger.info(
-            f"Collection {collection_name} not found. Setting nodes count to 0."
-        )
         count = 0
 
     if count == len(code_nodes.nodes):
-        logger.info(
-            f"Found {count} nodes in the collection. Using the existing collection."
-        )
+        logger.info(f"Found {count} existing nodes. Using the existing collection.")
         vector_store = QdrantVectorStore(
             collection_name=collection_name,
             client=client,
@@ -63,7 +57,7 @@ def index_given_nodes(
             embed_model=embedding_model,
         )
     logger.info(
-        f"Creating a new index with {len(code_nodes.nodes)} nodes. This may take a while."
+        f"Found {count} existing nodes. Creating a new index with {len(code_nodes.nodes)} nodes. This may take a while."
     )
     if count > 0:
         client.delete_collection(collection_name)

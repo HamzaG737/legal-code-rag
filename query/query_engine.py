@@ -15,7 +15,7 @@ def update_prompts_for_query_engine(query_engine: BaseQueryEngine) -> BaseQueryE
         "---------------------\n"
         "Given the context information and not prior knowledge, answer the query.\n"
         "You must always mention the code name and article number in your answer. With something like 'selon le code x et l'article y, ...'\n"
-        "Respond using the original language of the query.\n"
+        "Your response must be in the original language of the query. For instance if the query is in english, you must respond in english.\n"
         "Query: {query_str}\n"
         "Answer: "
     )
